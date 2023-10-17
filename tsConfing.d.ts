@@ -1,4 +1,4 @@
-// declare module 'express-jwt';
+declare module 'express-jwt';
 // declare module 'jsonwebtoken';
 // declare module 'multer';
 declare module 'markdown-it';
