@@ -3,6 +3,12 @@ import path from 'path';
 import { Configuration } from '@nuxt/types/index';
 import blogConfig from './blog.config';
 
+// 解决_dirname的问题 文档地址：https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 const server: any = {
   host: blogConfig.host,
   port: blogConfig.port,

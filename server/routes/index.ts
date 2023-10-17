@@ -6,6 +6,11 @@ import * as proxy from '../proxy/index';
 import { IResp } from '../../types';
 import config from '../../blog.config';
 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 const storage = multer.diskStorage({
   destination: path.resolve(__dirname, '../../static/upload/images/'),
   filename (_req, file, callback) {
