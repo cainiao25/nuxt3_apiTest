@@ -1,4 +1,8 @@
-import { connect, connection, Connection, Model } from 'mongoose';
+import { Model } from 'mongoose';
+import mongoose from 'mongoose';
+const connect = mongoose.connect;
+const connection = mongoose.connection;
+const Connection = mongoose.Connection;
 import { IPost, ICategory, IComment, ICache, ISetting, IProfile, IAuth } from '@/types/schema';
 import config from '../blog.config';
 import { Post } from './models/post';

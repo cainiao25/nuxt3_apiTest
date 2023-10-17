@@ -1,4 +1,9 @@
-import { Schema, model, models, Model } from 'mongoose';
+import {Model} from 'mongoose';
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+const model = mongoose.model;
+const models = mongoose.models;
+// const Model = mongoose.Model;
 import { IAuth } from '@/types/schema';
 
 export class Auth {

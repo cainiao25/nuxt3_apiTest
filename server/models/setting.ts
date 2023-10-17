@@ -1,4 +1,10 @@
-import { Schema, model, models, Model } from 'mongoose';
+import {Model} from 'mongoose';
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+const model = mongoose.model;
+const models = mongoose.models;
+// const Model = mongoose.Model;
+const Types = mongoose.Types;
 import { ISetting } from '@/types/schema';
 
 export const defaultSetting = {
