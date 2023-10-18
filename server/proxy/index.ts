@@ -1,8 +1,8 @@
 import DB from '../db';
-import BadWords from '../bad_words/index';
+// import BadWords from '../bad_words/index';
 import { IPost, ICache, IComment } from '~/types/schema';
 const { Post, Cache, Category, Comment, Guestbook, Setting, Profile } = DB.Models;
-const badWords = BadWords.instance;
+// const badWords = BadWords.instance;
 
 export async function getCategories () {
   const categories = await Category.find(
@@ -211,9 +211,9 @@ export async function getComments (params) {
 export async function saveComment (params) {
   const entity = new Comment({
     post: params.articleId,
-    username: badWords.filter(params.username),
+    // username: badWords.filter(params.username),
     website: params.website,
-    content: badWords.filter(params.content),
+    // content: badWords.filter(params.content),
     createTime: new Date()
   } as IComment);
   const comment = await entity.save();
@@ -247,9 +247,9 @@ export async function getGuestbook (params) {
 
 export async function saveGuestbook (params) {
   const entity = new Guestbook({
-    username: badWords.filter(params.username),
+    // username: badWords.filter(params.username),
     website: params.website,
-    content: badWords.filter(params.content),
+    // content: badWords.filter(params.content),
     createTime: new Date()
   } as IComment);
   const comment = await entity.save();
